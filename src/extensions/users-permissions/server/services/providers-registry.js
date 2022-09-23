@@ -220,6 +220,7 @@ const getInitialProviders = ({ purest }) => ({
     console.log("accessToken", accessToken);
     const line = purest({ provider: "line" });
     const me = await line.get("me").auth(accessToken).request();
+    // test data
     return {
       username: "test",
       email: "test@strapi.io",

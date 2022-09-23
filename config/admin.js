@@ -5,5 +5,5 @@ module.exports = ({ env }) => ({
   apiToken: {
     salt: env("API_TOKEN_SALT"),
   },
-  url: "https://356a-121-109-138-66.jp.ngrok.io/admin",
+  url: "/admin",
 });
