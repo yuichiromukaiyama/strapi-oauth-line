@@ -217,13 +217,11 @@ const getInitialProviders = ({ purest }) => ({
 
   // 認証後にAccessTokenを用いてID・PWでStrapiにユーザーとして登録する
   async line({ accessToken }) {
-    console.log("accessToken", accessToken);
     const line = purest({ provider: "line" });
-    const me = await line.get("me").auth(accessToken).request();
-    // test data
+    const me = await line.get("profile").auth(accessToken).request();
     return {
-      username: "test",
-      email: "test@strapi.io",
+      username: me.body.displayName,
+      email: `${me.body.userId}@strapi.io`,
     };
   },
 

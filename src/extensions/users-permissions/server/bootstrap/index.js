@@ -29,7 +29,7 @@ const initGrant = async (pluginStore) => {
       key: process.env.LINE_OAUTH_KEY,
       secret: process.env.LINE_OAUTH_SECRET,
       callback: `${baseURL}/line/callback`,
-      scope: ["openid", "identify"],
+      scope: ["openid", "profile", "identify"],
     },
   };
 
