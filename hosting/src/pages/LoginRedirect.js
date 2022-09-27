@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useLocation, useParams } from "react-router-dom";
 
-const backendUrl = "http://47.74.46.194/:1337";
+const backendUrl = "http://localhost:1337";
 
 const LoginRedirect = (props) => {
   const [text, setText] = useState("Loading...");
