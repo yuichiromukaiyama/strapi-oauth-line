@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const backendUrl = "http://localhost:1337";
+const backendUrl = "http://47.74.46.194/:1337";
 
 const providersNames = [
   // "discord",

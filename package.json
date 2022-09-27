@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
+    "install": "yarn --cwd hosting install && yarn install",
     "develop": "yarn --cwd hosting run build && strapi develop",
     "start": "strapi start",
     "build": "yarn --cwd hosting run build && strapi build",

@@ -15,10 +15,7 @@ const usersPermissionsActions = require("@strapi/plugin-users-permissions/server
 const getGrantConfig = require("@strapi/plugin-users-permissions/server/bootstrap/grant-config");
 
 const initGrant = async (pluginStore) => {
-  // const apiPrefix = strapi.config.get("api.rest.prefix");
-  const baseURL = urljoin(`${strapi.config.server.url}/`, "auth");
-
-  // http://47.74.46.194:1337/api/auth/line/callback
+  const baseURL = urljoin(`${strapi.config.server.url}`);
 
   const grantConfig = {
     ...getGrantConfig(baseURL),
@@ -30,7 +27,7 @@ const initGrant = async (pluginStore) => {
       icon: "line",
       key: process.env.LINE_OAUTH_KEY,
       secret: process.env.LINE_OAUTH_SECRET,
-      callback: `${baseURL}/line/callback`,
+      callback: `${baseURL}/#/auth/line/callback`,
       scope: ["openid", "profile", "identify"],
     },
   };
