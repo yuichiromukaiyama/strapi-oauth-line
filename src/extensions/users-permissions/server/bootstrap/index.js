@@ -15,8 +15,10 @@ const usersPermissionsActions = require("@strapi/plugin-users-permissions/server
 const getGrantConfig = require("@strapi/plugin-users-permissions/server/bootstrap/grant-config");
 
 const initGrant = async (pluginStore) => {
-  const apiPrefix = strapi.config.get("api.rest.prefix");
-  const baseURL = urljoin(`${strapi.config.server.url}/`, apiPrefix, "auth");
+  // const apiPrefix = strapi.config.get("api.rest.prefix");
+  const baseURL = urljoin(`${strapi.config.server.url}/`, "auth");
+
+  // http://47.74.46.194:1337/api/auth/line/callback
 
   const grantConfig = {
     ...getGrantConfig(baseURL),
